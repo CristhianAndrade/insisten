@@ -302,3 +302,15 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+function remove_admin_login_header() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+}
+
+add_action('get_header', 'remove_admin_login_header');
+
+function add_custom_css() {
+    wp_enqueue_style('custom-css',  get_stylesheet_directory_uri() . '/assets/css/custom.css');
+}
+
+add_action('wp_enqueue_scripts', 'add_custom_css');
