@@ -314,3 +314,13 @@ function add_custom_css() {
 }
 
 add_action('wp_enqueue_scripts', 'add_custom_css');
+
+function wpse15850_body_class( $wp_classes, $extra_classes )
+{
+	foreach (array_keys($wp_classes, 'blog') as $key) {
+		unset($wp_classes[$key]);
+	}
+
+    return	$wp_classes;
+}
+add_filter( 'body_class', 'wpse15850_body_class', 10, 2 );

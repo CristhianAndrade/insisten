@@ -35,3 +35,8 @@ src/.ftppass
 src/tmp/*
 odin.zip
 
+/.sass-cache/
+.sass-cache/
+/wp-content/themes/wpbrasil-odin-fda40f7/assets/css/.sass-cache/
+wp-content/themes/wpbrasil-odin-fda40f7/assets/css/.sass-cache/
+wp-content/themes/wpbrasil-odin-fda40f7/assets/css/.sass-cache/*
