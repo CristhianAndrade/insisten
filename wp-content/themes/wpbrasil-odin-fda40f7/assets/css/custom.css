@@ -17,6 +17,9 @@ input:focus, textarea:focus {
 a:focus {
   outline: inherit; }
 
+a:hover, a:focus {
+  text-decoration: none; }
+
 #header {
   background: url(../images/backsite.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -202,7 +205,7 @@ div#wpadminbar {
   color: #7f7f7f; }
   .page #wrapper article > .container b, .page #wrapper article > .container strong {
     color: #000; }
-.page .bg-81 {
+.page .bg-faq {
   background: url(../images/backsite.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;

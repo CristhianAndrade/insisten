@@ -8,7 +8,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="col-xs-12 bg-<?php the_ID(); ?> title-page">
+		<div class="col-xs-12 bg-<?php echo $wp_query->post->post_name; ?> title-page">
 			<div class="container">
 				<?php the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' ); ?>
 				<p class="sub-titulo"><?php the_subtitle(); ?></p>
