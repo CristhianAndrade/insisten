@@ -14,24 +14,71 @@ html {
 input:focus, textarea:focus {
   outline: none !important; }
 
+a:focus {
+  outline: inherit; }
+
 #header {
   background: url(../images/backsite.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 30px 0 0 0;
+  padding: 0 0 0 0;
   min-height: 830px; }
   #header .page-header {
     margin: 0;
-    border: none; }
+    border: none;
+    padding-top: 30px;
+    padding-bottom: 0;
+    transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s; }
+    #header .page-header .navbar-nav > li.active > a {
+      background: transparent;
+      color: #e3ea10; }
+    #header .page-header.fixed, #header .page-header.page-fix {
+      background-color: #fff;
+      position: fixed;
+      width: 100%;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      z-index: 1000;
+      webkit-box-shadow: 0px 3px 30px 0px rgba(50, 50, 50, 0.3);
+      -moz-box-shadow: 0px 3px 30px 0px rgba(50, 50, 50, 0.3);
+      box-shadow: 0px 3px 30px 0px rgba(50, 50, 50, 0.3); }
+      #header .page-header.fixed img.default, #header .page-header.page-fix img.default {
+        display: none; }
+      #header .page-header.fixed .site-logo-holder, #header .page-header.page-fix .site-logo-holder {
+        margin-top: 15px; }
+      #header .page-header.fixed .text-header, #header .page-header.page-fix .text-header {
+        display: inline-block !important;
+        padding-left: 20px;
+        border-left: 1px solid #ccc;
+        margin-left: 20px;
+        width: 150px;
+        line-height: 14px;
+        vertical-align: middle;
+        color: #808080; }
+      #header .page-header.fixed img.fix, #header .page-header.page-fix img.fix {
+        display: inline-block !important; }
+      #header .page-header.fixed .navbar-nav > li > a, #header .page-header.page-fix .navbar-nav > li > a {
+        color: #cbd700;
+        padding-top: 22px;
+        border-top: 3px solid #FFF;
+        padding-bottom: 25px; }
+      #header .page-header.fixed .navbar-nav > li.active > a, #header .page-header.page-fix .navbar-nav > li.active > a {
+        border-top-color: #ab2192;
+        background: #f1f1f1;
+        color: #ab2192;
+        text-decoration: underline; }
+      #header .page-header.fixed .navbar, #header .page-header.page-fix .navbar {
+        min-height: initial; }
   #header .site-logo-holder {
     float: left; }
   #header #main-navigation {
     margin: 0px 0;
     float: right; }
-  #header .page-header {
-    padding-bottom: 0; }
   #header > .container {
     padding-top: 235px; }
   #header .col2-header {
@@ -142,8 +189,33 @@ div#wpadminbar {
   margin-bottom: 35px; }
 
 .page header.entry-header {
-  padding-left: 15px;
-  padding-right: 15px; }
+  padding-left: 0;
+  padding-right: 0; }
+.page #header {
+  min-height: initial; }
+.page #wrapper.container {
+  padding-top: 70px; }
+.page #wrapper article > .container {
+  padding-top: 60px;
+  display: table;
+  font-size: 18px;
+  color: #7f7f7f; }
+  .page #wrapper article > .container b, .page #wrapper article > .container strong {
+    color: #000; }
+.page .bg-81 {
+  background: url(../images/backsite.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 45px 0 60px 0; }
+.page .title-page h1 {
+  color: #ccd532;
+  font-weight: bold; }
+.page .title-page .sub-titulo {
+  color: #fff;
+  font-size: 30px;
+  line-height: 30px; }
 
 #content.col-md-12 {
   padding: 0; }
@@ -157,29 +229,37 @@ div#wpadminbar {
 .article-5-bg, .page-id-72 .col-md-12 {
   background-color: #cccc33; }
 
-.article-2 header h2, .article-2 header h1, .post-22 header h2, .post-22 header h1 {
-  color: #FFF;
-  text-align: center;
-  font-size: 30px;
-  padding-top: 45px;
-  margin-top: 0;
-  font-weight: bold;
-  margin-bottom: 5px; }
-.article-2 .col-tema, .post-22 .col-tema {
-  margin-bottom: 65px; }
-.article-2 .content-tema p, .post-22 .content-tema p {
-  color: #fff;
-  font-size: 16px;
-  line-height: 18px; }
-  .article-2 .content-tema p:first-child, .post-22 .content-tema p:first-child {
-    font-size: 20px; }
-.article-2 .content-tema a, .post-22 .content-tema a {
-  color: #fff;
-  font-size: 14px;
-  line-height: 14px;
-  border-bottom: 1px solid #dada5d; }
-.article-2 .content-tema a:hover, .post-22 .content-tema a:hover {
-  text-decoration: none; }
+.article-2, .post-22 {
+  margin-bottom: 50px; }
+  .article-2 header h2, .article-2 header h1, .post-22 header h2, .post-22 header h1 {
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 45px;
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .article-2 .col-tema, .post-22 .col-tema {
+    margin-bottom: 5px; }
+  .article-2 .content-tema p, .post-22 .content-tema p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 18px; }
+    .article-2 .content-tema p:first-child, .post-22 .content-tema p:first-child {
+      font-size: 20px; }
+  .article-2 .content-tema a, .post-22 .content-tema a {
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    border-bottom: 1px solid #dada5d; }
+  .article-2 .content-tema a:hover, .post-22 .content-tema a:hover {
+    text-decoration: none; }
+  .article-2 .col-xs-12.text-tema, .post-22 .col-xs-12.text-tema {
+    font-size: 18px;
+    text-align: left;
+    line-height: 20px; }
+  .article-2 .col-xs-12.text-tema p, .post-22 .col-xs-12.text-tema p {
+    margin-bottom: 0; }
 
 .article-3 header h2, .article-3 header h1, .post-39 header h2, .post-39 header h1 {
   color: #93268F;

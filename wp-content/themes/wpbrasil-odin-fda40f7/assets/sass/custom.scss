@@ -26,7 +26,9 @@ html{
 input:focus, textarea:focus {
     outline: none !important;
 }
-
+a:focus {
+    outline: inherit;
+  }
 ////////////////////////HEADER////////////////////////
 
 #header
@@ -36,12 +38,82 @@ input:focus, textarea:focus {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 30px 0 0 0;
+  padding: 0 0 0 0;
   min-height: 830px;
 
   .page-header {
       margin: 0;
       border: none;
+      padding-top: 30px;
+      padding-bottom: 0;
+      transition: all .5s;
+      -moz-transition: all .5s;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+
+      .navbar-nav > li.active > a
+      {
+          background: transparent;
+          color:#e3ea10;
+      }
+
+      &.fixed, &.page-fix
+      {
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        z-index: 1000;
+        webkit-box-shadow: 0px 3px 30px 0px rgba(50, 50, 50, 0.3);
+        -moz-box-shadow: 0px 3px 30px 0px rgba(50, 50, 50, 0.3);
+        box-shadow: 0px 3px 30px 0px rgba(50, 50, 50, 0.3);
+
+        img.default
+        {
+          display: none;
+        }
+        .site-logo-holder {
+          margin-top: 15px;
+        }
+
+        .text-header
+        {
+            display: inline-block !important;
+            padding-left: 20px;
+            border-left: 1px solid #ccc;
+            margin-left: 20px;
+            width: 150px;
+            line-height: 14px;
+            vertical-align: middle;
+            color: #808080;
+        }
+
+        img.fix
+        {
+          display: inline-block !important;
+        }
+        .navbar-nav > li > a {
+          color:#cbd700;
+          padding-top: 22px;
+          border-top: 3px solid #FFF;
+          padding-bottom: 25px;
+
+        }
+
+        .navbar-nav > li.active > a
+        {
+            border-top-color: #ab2192;
+            background: #f1f1f1;
+            color:#ab2192;
+            text-decoration: underline;
+        }
+        .navbar
+        {
+            min-height: initial;
+        }
+      }
+
   }
 
   .site-logo-holder {
@@ -51,10 +123,6 @@ input:focus, textarea:focus {
   #main-navigation {
    margin: 0px 0;
    float: right;
-  }
-
-  .page-header {
-    padding-bottom: 0;
   }
 
   > .container{
@@ -113,6 +181,7 @@ input:focus, textarea:focus {
   a.assista-video2.ver-video:hover{
     text-decoration: none;
   }
+
 
 }
 
@@ -225,9 +294,50 @@ div#wpadminbar {
   margin-bottom: 35px;
 }
 
-.page header.entry-header {
-    padding-left: 15px;
-    padding-right: 15px;
+.page{
+  header.entry-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #header
+  {
+     min-height: initial;
+  }
+  #wrapper{
+    &.container{
+      padding-top: 70px;
+    }
+    article > .container{
+      padding-top: 60px;
+      display: table;
+      font-size: 18px;
+      color: #7f7f7f;
+      b,strong{
+        color: #000;
+      }
+    }
+  }
+  .bg-81
+  {
+    background: url(../images/backsite.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 45px 0 60px 0;
+  }
+  .title-page {
+    h1 {
+      color: #ccd532;
+      font-weight: bold;
+    }
+    .sub-titulo
+    {
+      color: #fff;
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
 }
 
 #content
@@ -249,6 +359,7 @@ div#wpadminbar {
 }
 
 .article-2,.post-22 {
+  margin-bottom: 50px;
 
   header h2,  header h1 {
     color: #FFF;
@@ -261,7 +372,7 @@ div#wpadminbar {
 
   }
   .col-tema {
-    margin-bottom: 65px;
+        margin-bottom: 5px;
   }
   .content-tema
   {
@@ -286,7 +397,14 @@ div#wpadminbar {
     }
 
   }
-
+  .col-xs-12.text-tema {
+    font-size: 18px;
+    text-align: left;
+    line-height: 20px;
+  }
+  .col-xs-12.text-tema p{
+    margin-bottom: 0;
+  }
 }
 
 .article-3 , .post-39  {

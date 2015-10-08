@@ -309,11 +309,12 @@ function remove_admin_login_header() {
 
 add_action('get_header', 'remove_admin_login_header');
 
-function add_custom_css() {
+function add_custom() {
     wp_enqueue_style('custom-css',  get_stylesheet_directory_uri() . '/assets/css/custom.css');
+		wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/assets/js/functions.js' );
 }
 
-add_action('wp_enqueue_scripts', 'add_custom_css');
+add_action('wp_enqueue_scripts', 'add_custom');
 
 function wpse15850_body_class( $wp_classes, $extra_classes )
 {

@@ -7,6 +7,9 @@
  * @package Odin
  * @since 2.2.0
  */
+
+$_home = is_home();
+
 ?><!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
@@ -26,13 +29,15 @@
 <body <?php body_class(); ?>>
 
 	<header id="header" role="banner">
-		<div class="page-header hidden-xs">
+		<div class="page-header hidden-xs <?php if(!$_home){ echo 'page-fix'; } ?>">
+
+
 				<div class="container">
 					<div class="site-logo-holder">
 						<a class="site-logo"  href="<?php echo home_url(); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
 							<img class="fix" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" style="display:none;" />
 							<img class="default" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo2.png" alt="<?php bloginfo( 'name' ); ?>" />
-							<span style="display:none;"><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></span>
+							<span class="text-header" style="display:none;"><?php bloginfo( 'description' ); ?></span>
 						</a>
 					</div>
 
@@ -72,10 +77,10 @@
 							</form> */ ?>
 						</nav><!-- .navbar-collapse -->
 					</div><!-- #main-navigation-->
-
 				</div>
-		</div><!-- .site-header-->
 
+		</div><!-- .site-header-->
+		<?php if($_home): ?>
 		<div class="container">
 
 				<div class="row">
@@ -90,7 +95,7 @@
 				</div>
 
 		</div><!-- .container-->
-
+	<?php endif; ?>
 	</header><!-- #header -->
 
 	<div id="wrapper" class="container">
